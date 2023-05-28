@@ -36,3 +36,25 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+dietservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
+diseaseservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule  # 负载均衡规则
+ribbon:
+  eager-load:
+    enabled: true
+    clients:
+      - userservice
+feign:
+  client:
+    config:
+      -disease:
+        logger-level: basic
+      -diet:
+        logger-level: basic
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50

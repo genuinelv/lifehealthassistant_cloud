@@ -1,7 +1,10 @@
 package com.lzn.userservice.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
+import com.lzn.feign.clients.DietClient;
+import com.lzn.feign.clients.DiseaseClient;
+import com.lzn.feign.domain.Diet;
+import com.lzn.feign.domain.Disease;
 import com.lzn.userservice.dao.UserInfoDao;
 import com.lzn.userservice.domain.User;
 import com.lzn.userservice.controller.utils.R;
@@ -22,6 +25,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, User> implemen
     UserInfoDao userInfoDao;
     @Autowired
     UserEmailDao userEmailDao;
+
+    @Autowired
+    DietClient dietClient;
+    @Autowired
+    DiseaseClient diseaseClient;
 
 
 
@@ -64,7 +72,8 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, User> implemen
     @Override
     @Transactional(rollbackFor=Exception.class)
     public Boolean deleteById(String id) {
-        List<Diet> dietList=new DietServiceImpl().getDietAll(id);
+        //List<Diet> dietList=new DietServiceImpl().getDietAll(id);
+        List<Diet> dietList = (List)dietClient.getAllDiet(id).getData();
         for(int i=0;i<dietList.size();i++){
             String filename1=dietList.get(i).getPicture1();
             if(filename1!=null) {
@@ -83,7 +92,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, User> implemen
             }
         }
         userInfoDao.delete_diet(id);
-        List<Disease> diseaseList=new DiseaseServiceImpl().getDiseaseAll(id);
+        List<Disease> diseaseList=(List<Disease>) diseaseClient.getAllDisease(id).getData();
         for(int i=0;i<diseaseList.size();i++){
             String filename1=diseaseList.get(i).getSympic();
             if(filename1!=null) {
