@@ -12,7 +12,15 @@ spring:
           uri: lb://userservice
           predicates:
             - Path=/user/**
-        - id: order-service
-          uri: lb://orderservice
+        - id: diet-service
+          uri: lb://dietservice
           predicates:
-            - Path=/order/**
+            - Path=/diet/**
+        - id: disease-service
+          uri: lb://diseaseservice
+          predicates:
+            - Path=/disease/**
+        - id: health-service
+          uri: lb://healthservice
+          predicates:
+            - Path=/health/**
