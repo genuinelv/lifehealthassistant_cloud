@@ -7,6 +7,10 @@
     <groupId>org.example</groupId>
     <artifactId>lifehealthassistant_cloud</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>gateway</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
