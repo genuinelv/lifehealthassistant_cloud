@@ -14,6 +14,7 @@
         <module>diet-service</module>
         <module>disease-service</module>
         <module>health-service</module>
+        <module>feign-api</module>
     </modules>
 
     <parent>
