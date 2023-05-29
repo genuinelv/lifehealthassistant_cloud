@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * ClassName: DietClient
  * Description:
@@ -15,6 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @FeignClient(value = "dietservice")
 public interface DietClient {
-    @GetMapping("/get_diet_all")
-    public R getAllDiet(String userid);
+    @GetMapping("/diet/get_diet_all")
+    public R getAllDiet(@RequestParam("id") String userid);
+
+    @GetMapping("/diet/now")
+    public String now();
 }

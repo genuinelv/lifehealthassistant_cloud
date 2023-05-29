@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @FeignClient(value = "diseaseservice")
 public interface DiseaseClient {
-    @GetMapping("/get_diseaseall")
-    public R getAllDisease(String userid);
+    @GetMapping("/disease/get_diseaseall")
+    public R getAllDisease(@RequestParam("id") String userid);
 
 }
