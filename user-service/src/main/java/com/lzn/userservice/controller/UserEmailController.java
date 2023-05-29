@@ -2,8 +2,8 @@ package com.lzn.userservice.controller;
 
 
 
+import com.lzn.feign.domain.R;
 import com.lzn.userservice.service.UserEmailService;
-import com.lzn.userservice.controller.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

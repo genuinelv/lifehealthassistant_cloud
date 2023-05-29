@@ -1,7 +1,7 @@
 package com.lzn.userservice.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lzn.userservice.controller.utils.R;
+import com.lzn.feign.domain.R;
 import com.lzn.userservice.domain.Useremail;
 
 

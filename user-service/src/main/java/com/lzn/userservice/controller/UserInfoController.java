@@ -2,7 +2,7 @@ package com.lzn.userservice.controller;
 
 
 
-import com.lzn.userservice.controller.utils.R;
+import com.lzn.feign.domain.R;
 import com.lzn.userservice.domain.User;
 import com.lzn.userservice.service.UserInfoService;
 
@@ -46,5 +46,9 @@ public class UserInfoController {
     @DeleteMapping("/{id}")
     public R remove(@PathVariable String id){
         return new R(userInfoService.deleteById(id));
+    }
+    @GetMapping("usernow")
+    public String usernow(){
+        return userInfoService.usernow();
     }
 }

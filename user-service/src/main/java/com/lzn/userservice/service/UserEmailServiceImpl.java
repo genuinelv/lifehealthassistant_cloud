@@ -2,9 +2,9 @@ package com.lzn.userservice.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.lzn.feign.domain.R;
 import com.lzn.userservice.dao.UserInfoDao;
 import com.lzn.userservice.domain.Useremail;
-import com.lzn.userservice.controller.utils.R;
 import com.lzn.userservice.controller.utils.RandomUtil;
 import com.lzn.userservice.dao.UserEmailDao;
 import org.springframework.beans.factory.annotation.Autowired;
