@@ -13,9 +13,8 @@ spring:
     host: smtp.163.com
     # 发送者邮箱
     username: lzn_11011@163.com
-    #username: 482087021@qq.com
     # 配置密码，注意不是真正的密码，而是刚刚申请到的授权码
-    password: WINNFGHCHFRZEBVR
+    password:
     # 端口号465或587
     port: 465
     #port: 587
