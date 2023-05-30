@@ -15,6 +15,7 @@
 ### 导入依赖后，建数据库health_project_data，字符集为utf8。建好数据库后运行initAssistant.sql文件，创建user表和useremail表
 ### 运行nacos
 ### 更改user-service,diet-service，disease-service,health-service模块下的application.yml中的数据库用户名和密码
+### user-service模块下的application.yml内填入自己的邮箱和授权码，用以支持绑定邮箱操作
 ### 在D盘下创建pic_user,pic_diet,pic_disease文件夹存储图片
 ## 界面展示，见Android端
 ## 附项目截图
